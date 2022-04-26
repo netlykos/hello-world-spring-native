@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hello-world-spring-native
+server:
+  port: 8080
+org:
+  netlykos:
+    fortune:
+      directory: src/main/resources/fortune

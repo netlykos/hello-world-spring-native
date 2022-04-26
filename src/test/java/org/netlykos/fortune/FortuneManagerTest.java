@@ -7,22 +7,20 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.netlykos.fortune.beans.Fortune;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import io.quarkus.test.junit.QuarkusTest;
-
-@QuarkusTest
+@SpringBootTest(classes = FortuneManager.class)
 public class FortuneManagerTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(FortuneManagerTest.class);
 
-  @Inject
+  @Autowired
   FortuneManager fortuneManager;
 
   @BeforeEach
