@@ -42,8 +42,8 @@ class FortuneManagerTest {
     List<String> expect = Arrays.asList("A celebrity is a person who is known for his well-knownness.");
     Fortune actual = fortuneManager.getFortune(category, cookie);
     LOGGER.debug("{}", actual);
-    assertEquals(expect.size(), actual.fortune().size());
-    assertEquals(expect.get(0), actual.fortune().get(0));
+    assertEquals(expect.size(), actual.lines().size());
+    assertEquals(expect.get(0), actual.lines().get(0));
   }
 
   @Test
@@ -57,9 +57,9 @@ class FortuneManagerTest {
         "     http://anidb.info/perl-bin/animedb.pl?show=anime&aid=352");
     Fortune actual = fortuneManager.getFortune(category, cookie);
     LOGGER.debug("{}", actual);
-    assertEquals(expect.size(), actual.fortune().size());
+    assertEquals(expect.size(), actual.lines().size());
     for (int i = 0; i < expect.size(); i++) {
-      assertEquals(expect.get(i), actual.fortune().get(i));
+      assertEquals(expect.get(i), actual.lines().get(i));
     }
   }
 

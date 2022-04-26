@@ -139,7 +139,7 @@ public class FortuneManager {
         cookie, records.size(), totalLength, byteOffsetStart, byteOffsetEnd);
     byte[] byteCookie = structFile.getFileContent(byteOffsetStart, totalLength);
     List<String> fortune = Arrays.asList(new String(byteCookie, UTF_8).split(UNIX_NEW_LINE));
-    return new Fortune(structFile.category(), cookie, fortune);
+    return new Fortune(structFile.category(), cookie + 1, fortune);
   }
 
   static byte[] getResourceContent(String resourcePath) throws IOException {

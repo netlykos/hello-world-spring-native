@@ -21,7 +21,7 @@ public class FortuneController {
   // @formatter:off
   @GetMapping(
       produces = { TEXT_PLAIN_VALUE, APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE },
-      path = { "/fortune", "/fortune/{category}", "/fortune/{category}/{cookie}" }
+      path = { "/fortune", "/fortune/{category}", "/fortune/{category}/{cookie:[\\d]+}" }
   )
   public Fortune fortune(
       @PathVariable(required = false) String category,

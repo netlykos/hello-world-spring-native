@@ -5,11 +5,26 @@ GET {{baseUrl}}/fortune
 Accept: application/json
 
 ###
+GET {{baseUrl}}/fortune/art
+Accept: application/json
+
+###
+GET {{baseUrl}}/fortune/art/3
+Accept: application/json
+
+###
+GET {{baseUrl}}/fortune
+Accept: application/xml
+
+###
 GET {{baseUrl}}/fortune
 Accept: text/plain
 
 ###
+GET {{baseUrl}}/categories
+Accept: application/json,application/xml
+
+###
 GET {{baseUrl}}/actuator
-Accept: text/plain
 
 ###
