@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = FortuneManager.class)
-public class FortuneManagerTest {
+class FortuneManagerTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(FortuneManagerTest.class);
 
@@ -24,19 +24,19 @@ public class FortuneManagerTest {
   FortuneManager fortuneManager;
 
   @BeforeEach
-  public void init() {
+  void init() {
     assertNotNull(fortuneManager);
   }
 
   @Test
-  public void testGetRandomFortune() {
+  void testGetRandomFortune() {
     Fortune fortune = fortuneManager.getRandomFortune();
     LOGGER.debug("{}", fortune);
     assertNotNull(fortune);
   }
 
   @Test
-  public void testGetFortuneSuccess() {
+  void testGetFortuneSuccess() {
     String category = "art";
     int cookie = 3;
     List<String> expect = Arrays.asList("A celebrity is a person who is known for his well-knownness.");
@@ -47,7 +47,7 @@ public class FortuneManagerTest {
   }
 
   @Test
-  public void testGetFortuneSuccessEdge() {
+  void testGetFortuneSuccessEdge() {
     String category = "art";
     int cookie = 465;
     List<String> expect = Arrays.asList(
@@ -64,7 +64,7 @@ public class FortuneManagerTest {
   }
 
   @Test
-  public void testGetFortuneFailureBadCategory() {
+  void testGetFortuneFailureBadCategory() {
     String category = "not_a_valid_category";
     String expected = String.format("Category %s is not setup.", category);
     IllegalArgumentException actual = assertThrows(IllegalArgumentException.class, () -> {
@@ -74,7 +74,7 @@ public class FortuneManagerTest {
   }
 
   @Test
-  public void testGetFortuneFailureNegativeCookie() {
+  void testGetFortuneFailureNegativeCookie() {
     String category = "art";
     int cookie = -1;
     String expected = "Cookie number should be positive.";
@@ -85,7 +85,7 @@ public class FortuneManagerTest {
   }
 
   @Test
-  public void testGetFortuneFailureOverflowCookie() {
+  void testGetFortuneFailureOverflowCookie() {
     String category = "art";
     int range = 465, cookie = range + 1;
     String expected = String.format("Category %s only contains %d cookie(s).", category, range);
