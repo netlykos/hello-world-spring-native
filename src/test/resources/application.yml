@@ -1,8 +1,18 @@
 spring:
   application:
     name: hello-world-spring-native
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: WARN
+    org.netlykos: TRACE
+  pattern:
+    console: '%-5level %d{yyyy-MM-dd HH:mm:ss.SSS} [%-30thread] %logger %m%n'
+
 server:
   port: 8080
+
 org:
   netlykos:
     fortune:

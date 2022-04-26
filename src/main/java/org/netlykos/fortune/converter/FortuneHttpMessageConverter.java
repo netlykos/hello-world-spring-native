@@ -23,7 +23,9 @@ import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
 import org.springframework.http.ReactiveHttpOutputMessage;
+import org.springframework.http.codec.EncoderHttpMessageWriter;
 import org.springframework.http.codec.HttpMessageWriter;
+import org.springframework.http.codec.xml.Jaxb2XmlEncoder;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
@@ -72,6 +74,9 @@ public class FortuneHttpMessageConverter implements HttpMessageConverter<Fortune
   @Override
   public Mono<Void> write(Publisher<? extends Fortune> inputStream, ResolvableType elementType, MediaType mediaType, ReactiveHttpOutputMessage message,
       Map<String, Object> hints) {
+    MediaType contentType = message.getHeaders().getContentType();
+    LOGGER.debug("Got content type {}", contentType);
+    // TODO: Look at EncoderHttpMessageWriter<T>.class
     return null;
   }
 
