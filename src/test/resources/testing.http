@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:8080
+
+####
+GET {{baseUrl}}/fortune
+Accept: application/json
+
+###
+GET {{baseUrl}}/fortune
+Accept: text/plain
+
+###
+GET {{baseUrl}}/actuator
+Accept: text/plain
+
+###

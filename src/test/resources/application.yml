@@ -6,4 +6,4 @@ server:
 org:
   netlykos:
     fortune:
-      directory: src/main/resources/fortune
+      directory: src/test/resources/fortune
