@@ -22,7 +22,7 @@ Accept: text/plain
 
 ###
 GET {{baseUrl}}/categories
-Accept: application/json,application/xml
+Accept: application/xml
 
 ###
 GET {{baseUrl}}/actuator
