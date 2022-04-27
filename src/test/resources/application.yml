@@ -1,6 +1,10 @@
 spring:
   application:
     name: hello-world-spring-native
+  devtools:
+    restart:
+      additional-exclude: 
+        - "**/*.http"
 
 logging:
   level:

@@ -1,9 +1,36 @@
 @baseUrl = http://localhost:8080
 
 ####
+GET {{baseUrl}}/fortune/tao/49
+Accept: application/json
+
+###
+GET {{baseUrl}}/categories
+Accept: application/json
+
+###
 GET {{baseUrl}}/fortune
 Accept: application/json
 
+###
+GET {{baseUrl}}/fortune
+Accept: text/html
+
+###
+GET {{baseUrl}}/fortune
+Accept: application/xhtml+xml
+
+###
+GET {{baseUrl}}/fortune/tao/49
+Accept: application/xml
+
+###
+GET {{baseUrl}}/fortune/tao/49
+Accept: text/plain
+
+###
+GET {{baseUrl}}/categories
+Accept: application/xml
 ###
 GET {{baseUrl}}/fortune/art
 Accept: application/json
@@ -12,17 +39,6 @@ Accept: application/json
 GET {{baseUrl}}/fortune/art/3
 Accept: application/json
 
-###
-GET {{baseUrl}}/fortune
-Accept: application/xml
-
-###
-GET {{baseUrl}}/fortune
-Accept: text/plain
-
-###
-GET {{baseUrl}}/categories
-Accept: application/xml
 
 ###
 GET {{baseUrl}}/actuator
